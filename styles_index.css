@@ -167,3 +167,42 @@ h1 {
     border-bottom: 5px solid #e6e6e6;
     /* Borda inferior */
 }
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Estilos para dispositivos móveis */
+@media only screen and (max-width: 600px) {
+    
+    main {
+        width: 100%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+
+    
+    .menu-toggle:checked + nav {
+        display: block;
+    }
+
+    
+    h1 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    
+    .hidden-mobile {
+        display: none;
+    }
+}
