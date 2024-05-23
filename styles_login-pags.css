@@ -1,6 +1,6 @@
 /* Estilos personalizados para a página de login Dev André */
 body {
-    background: url('/imagens hotel/HPG-rosa-preenchido.png') no-repeat center center fixed;
+    background: url('imagens hotel/HPG-rosa-preenchido.png') no-repeat center center fixed;
     background-size: cover;
     font-family: Arial, sans-serif;
     height: 100vh;
