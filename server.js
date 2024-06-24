@@ -3,7 +3,8 @@ const mongoose = require("mongoose"); //importando mongoose: ODM -> Object Data 
 const sessions = require("express-session");   
 const flash = require("connect-flash"); 
 const path = require("path"); 
-const router = require("./router"); 
+const router = require("./router");  
+const { middlwareGlobal} = require("./src/middlewares/middlwareGlobal"); 
 require('dotenv').config();  
 const app  = express(); //inicializando express.  
 app.use(express.static("public"));  
@@ -36,6 +37,7 @@ const sessionOptions = sessions({
         maxAge: 1000* 60*7*1000, 
     }
 })  
-app.use(router); 
 app.use(sessionOptions); 
 app.use(flash()); 
+app.use(middlwareGlobal);  
+app.use(router); 
