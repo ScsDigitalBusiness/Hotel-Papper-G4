@@ -58,12 +58,12 @@ h1 {
 }
 
 .nav-link {
-    color: white;
-    font-size: 28px;
+    color: white !important;
+    font-size: 28px !important;
 }
 
 .nav-ite {
-    color: rgb(11, 143, 138);
+    color: rgb(11, 143, 138) !important;
 }
 
 
@@ -97,20 +97,20 @@ body {
 @media only screen and (max-width: 600px) {
     
     main {
-        width: 100%;
+        width: 100% !important;
     }
 
     nav {
-        display: none;
+        display: none !important;
     }
 
     .menu-toggle {
-        display: block; 
+        display: block !important; 
     }
 
     
     .menu-toggle:checked + nav {
-        display: block;
+        display: block !important;
     }
 
     

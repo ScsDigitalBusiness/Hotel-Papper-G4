@@ -101,12 +101,12 @@ h1 {
 }
 
 .nav-link {
-    color: white;
-    font-size: 28px;
+    color: white !important;
+    font-size: 28px !important;
 }
 
 .nav-item {
-    color: rgb(11, 143, 138);
+    color: rgb(11, 143, 138) !important;
 }
 
 .container-navbar {
@@ -180,16 +180,16 @@ body {
     }
 
     nav {
-        display: none;
+        display: none !important;
     }
 
     .menu-toggle {
-        display: block; 
+        display: block !important; 
     }
 
     
     .menu-toggle:checked + nav {
-        display: block;
+        display: block !important;
     }
 
     

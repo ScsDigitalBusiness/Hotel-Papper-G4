@@ -109,16 +109,16 @@ body {
     }
 
     nav {
-        display: none;
+        display: none !important;
     }
 
     .menu-toggle {
-        display: block; 
+        display: block !important; 
     }
 
     
     .menu-toggle:checked + nav {
-        display: block;
+        display: block !important;
     }
 
     
