@@ -15,54 +15,9 @@
 
   <!-- Barra de navegação -->
 
-  <nav class="navbar navbar-expand-xxl bg-body-tertiary">
-
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="/utilites/imagens-hotel/HPG-rosa-vazio.png" alt="Hotel Logo" class="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-        aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarScroll">
-        <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
-          <li class="nav-item">
-            <a class="nav-link " aria-current="page" href="/home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Ofertas</a>
-          </li>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " aria-disabled="true" href="/QuemSomos/">Quem Somos</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Quartos
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/quartoIndividual/">Quarto Individual</a></li>
-              <li><a class="dropdown-item" href="/quartoDeCasal/">Quarto Casal</a></li>
-
-              <li><a class="dropdown-item" href="/quartoDeLuxo/">Quarto Luxo</a></li>
-            </ul>
-          </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link  " href="/">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/register/">Registre-se</a>
-
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <%- include("navbar.ejs") %>
   <div class="container">
-
+    
     <h1 class="text-center mt-5"></h1>
     <div id="carouselExampleControls" class="carousel slide mt-5" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -88,7 +43,14 @@
       </button>
     </div>
     <form id="reservationForm" class="mt-3" action="/reservation/create/" method="POST">
-      <div class="container">
+      <div class="container"> 
+        <% if(success.length > 0) { %> 
+          <% success.forEach(scs => { %> 
+           <div class="alert alert-success w-100" role="alert">
+            <%= scs %>
+           </div>
+         <%  }); %>
+        <%  } %>
         <h1 class="text-center mt-5">Reserva de Quartos</h1>
         <form id="reservationForm" class="mt-5">
           <div class="mb-3">
@@ -132,11 +94,11 @@
         <div class="container mt-3">
           <div class="row justify-content-center">
             <div class="col-auto">
-              <button onclick="location.href='index.html'" type="button" class="btn btn-secondary me-2">Fazer Nova
+              <button onclick="location.href='/home'" type="button" class="btn btn-secondary me-2">Fazer Nova
                 Reserva</button>
             </div>
             <div class="col-auto">
-              <button onclick="location.href='index.html'" type="button" class="btn btn-secondary">Voltar ao
+              <button onclick="location.href='/home'" type="button" class="btn btn-secondary">Voltar ao
                 incio</button>
             </div>
           </div>

@@ -5,5 +5,8 @@ exports.reservationIndex = (req,res) =>{
 
 exports.createReservation = (req,res) =>{
     const reservation = new Reservation(req.body); 
-    reservation.create(); 
+    reservation.create();   
+    req.flash("success","Reserva cria com sucesso!"); 
+    res.redirect("back"); 
+
 }

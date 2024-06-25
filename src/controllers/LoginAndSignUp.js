@@ -22,7 +22,9 @@ exports.Auth = async (req,res) =>{
     res.redirect("back");   
 
   }else { 
-    res.redirect("/home");   
+    req.session.user = signUpAndLogin.user; 
+    res.redirect("/home");    
+
   }
   
 }

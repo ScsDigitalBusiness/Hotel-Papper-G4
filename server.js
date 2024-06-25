@@ -2,8 +2,10 @@ const express = require("express");  //importanto express
 const mongoose = require("mongoose"); //importando mongoose: ODM -> Object Data Model.  
 const sessions = require("express-session");   
 const flash = require("connect-flash"); 
-const path = require("path"); 
+const path = require("path");  
+const MongoStore = require("connect-mongo"); 
 const router = require("./router");  
+ 
 const { middlwareGlobal} = require("./src/middlewares/middlwareGlobal"); 
 require('dotenv').config();  
 const app  = express(); //inicializando express.  
@@ -30,7 +32,8 @@ app.on("Conected",()=>{ //quando for conectado com a base de dados, o express va
 
 const sessionOptions = sessions({
     secret : "Aplication Sessions", 
-    resave: false,
+    resave: false,  
+    store: MongoStore.create({mongoUrl:process.env.CONNECTION_URL}), 
     saveUninitialized: false, 
     cookie: {
         httpOnly:true, 

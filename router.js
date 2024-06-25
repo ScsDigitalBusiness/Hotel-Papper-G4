@@ -1,7 +1,7 @@
 const express = require("express"); 
 const router = express.Router(); 
 const {indexLogin,Auth,indexRegister,createAccount} = require("./src/controllers/LoginAndSignUp");  
-const {indexHome} = require("./src/controllers/HomeControllers");  
+const {indexHome,logout} = require("./src/controllers/HomeControllers");  
 const {QuartoIndividualIndex} = require("./src/controllers/QuartoIndividualControllers");   
 const {quartoDeCasalIndex} = require("./src/controllers/QaurtoDeCasalController");  
 const {quartoDeLuxoController} = require("./src/controllers/QuartoDeLuxoController");
@@ -20,7 +20,7 @@ router.get("/QuemSomos/",QuemSomosIndex)
 
 router.get("/reservation/",reservationIndex);  
 router.post("/reservation/create/",createReservation); 
-
+router.get('/logout',logout); 
 
   
    
