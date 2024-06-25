@@ -7,6 +7,6 @@ exports.createReservation = (req,res) =>{
     const reservation = new Reservation(req.body); 
     reservation.create();   
     req.flash("success","Reserva cria com sucesso!"); 
-    res.redirect("/back"); 
+    res.redirect("back"); 
 
 }

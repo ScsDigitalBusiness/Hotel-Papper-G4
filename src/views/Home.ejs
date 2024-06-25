@@ -44,14 +44,21 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link  " href="/">Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link " href="/register/">Registre-se</a>
-
-          </li>
+        <ul class="navbar-nav"> 
+          <% if(user) { %> 
+             <p>Olá, </p> 
+             <span><%= user.username%></span>  
+             <img  style="margin-left: 2vh;" onclick="location.href='/logout' "  height="30" width="30" src="/utilites/logout.svg" alt="">
+          <%  }else { %> 
+            <li class="nav-item">
+              <a class="nav-link" href="/">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="/register/">Registre-se</a>
+  
+            </li>
+           <% } %>  
+        
         </ul>
       </div>
     </div>

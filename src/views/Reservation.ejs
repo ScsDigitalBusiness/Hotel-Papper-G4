@@ -62,7 +62,7 @@
     </div>
   </nav>
   <div class="container">
-
+    
     <h1 class="text-center mt-5"></h1>
     <div id="carouselExampleControls" class="carousel slide mt-5" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -88,7 +88,14 @@
       </button>
     </div>
     <form id="reservationForm" class="mt-3" action="/reservation/create/" method="POST">
-      <div class="container">
+      <div class="container"> 
+        <% if(success.length > 0) { %> 
+          <% success.forEach(scs => { %> 
+           <div class="alert alert-success w-100" role="alert">
+            <%= scs %>
+           </div>
+         <%  }); %>
+        <%  } %>
         <h1 class="text-center mt-5">Reserva de Quartos</h1>
         <form id="reservationForm" class="mt-5">
           <div class="mb-3">
@@ -132,11 +139,11 @@
         <div class="container mt-3">
           <div class="row justify-content-center">
             <div class="col-auto">
-              <button onclick="location.href='index.html'" type="button" class="btn btn-secondary me-2">Fazer Nova
+              <button onclick="location.href='/home'" type="button" class="btn btn-secondary me-2">Fazer Nova
                 Reserva</button>
             </div>
             <div class="col-auto">
-              <button onclick="location.href='index.html'" type="button" class="btn btn-secondary">Voltar ao
+              <button onclick="location.href='/home'" type="button" class="btn btn-secondary">Voltar ao
                 incio</button>
             </div>
           </div>
